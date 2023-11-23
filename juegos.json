@@ -1,0 +1,38 @@
+[ 
+    {
+       "nombre": "Styx: Shards of Darkness",
+       "categoria": "Accion",
+       "plataforma": "PC",
+       "imagenPlataforma": "./img/PC_Gamer.png",
+       "descripcion": "vuelve a sus aventuras en escenarios en los que deberá pasar desapercibido para enfrentar humanos, elfos y enanos. Ser silencioso y realizar una buena exploración son las claves para lograr cumplir misiones y eliminar enemigos. Eso sí, esto también significa planificar y resolver acertijos.",
+       "imagen": "./img/juegos/styx_shards.png",
+       "id": 1
+    },
+    {
+        "nombre": "Diablo 4",
+        "categoria": "RPG",
+        "plataforma": "PlayStation",
+        "imagenPlataforma": "./img/Playstation.png",
+        "descripcion": "50 años después de los eventos de Diablo III: Reaper of Souls, un grupo de cultistas invocan a Lilith, hija y archienemiga de Mephisto",
+        "imagen": "./img/juegos/diablo-IV.jpg",
+        "id": 2
+    },
+    {
+        "nombre": "Baldur's Gate 3",
+        "categoria": "Aventura",
+        "plataforma": "Xbox",
+        "imagenPlataforma": "./img/xbox.png",
+        "descripcion": "Es un videojuego de rol que incorpora elementos de juego en solitario y multijugador cooperativo, donde los jugadores pueden crear uno o más personajes y formar un grupo con otros personajes generados por el sistema para avanzar en la trama",
+        "imagen": "./img/juegos/Baldur.jpg",
+        "id": 3
+    },
+    {
+        "nombre": "Super Mario Bros Wonder",
+        "categoria": "Aventura",
+        "plataforma": "Nintendo",
+        "imagenPlataforma": "./img/nintendo.png",
+        "descripcion": "Encuentra maravilla en el Reino de las Flores en la próxima aventura de Super Mario de desplazamiento lateral",
+        "imagen": "./img/juegos/mario.jpg",
+        "id": 4
+    }
+  ]

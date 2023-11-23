@@ -1,0 +1,342 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+  
+#body {
+    background-color: rgb(43, 42, 42);
+}
+  
+#body #header {
+    padding: 25px;
+    border-bottom: solid #e95f03;
+    display: flex;
+    height: 250px;
+}
+#body #header img{
+    width: 200px;
+    padding: 40px;
+}
+
+#body #header .logo {
+    display: flex;
+    /* -webkit-box-pack: center;
+    -ms-flex-pack: center; */
+    justify-content: right;
+}
+#body #header .logo img{
+ width: 300px;
+}
+
+#body .buscar {
+    width: 100%;
+    display: flex;
+    text-align: right;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+}
+  
+#body .buscar #buscarJuego {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 20px;
+    background-color: #757372;
+    color: #E0FBFC;
+    font-size: 30px;
+    font-family: 'Yellowtail', cursive;
+}
+  
+#body .buscar a {
+  text-decoration: none;
+}
+  
+#body #filtrado {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    color: #E0FBFC;
+    font-family: 'Arima', cursive;
+}
+  
+#body #filtros {
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    background-color: rgb(250, 250, 189);
+    list-style: none;
+    padding: 10px;
+    margin-top: 40px;
+}
+  
+#body #filtros .ul {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    text-decoration: none;
+    width: 200px;
+}
+  
+#body #filtros .ul .li1, #body #filtros .ul .li2 {
+    background-color: #e95f03;
+    padding: 10px;
+    border-radius: 25px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+  
+#body #filtros .ul .li1 .filtrarPorCategoria, #body #filtros .ul .li2 .filtrarPorPlataforma {
+    background-color: rgb(216, 216, 149);
+    padding: 5%;
+    border-radius: 25px;
+    color: #333435;
+    text-align: center;
+    border: none;
+    margin-top: 10px;
+}
+  
+#body #filtros .ul .li1 .filtrarPorCategoria:hover, #body #filtros .ul .li2 .filtrarPorPlataforma:hover {
+    color: #EE6C4D;
+    background-color: #293241;
+}
+  
+#body #filtros .ul .li2 {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 15px;
+    margin-top: 10px;
+}
+  
+#body #filtros .ul .li2 .filtrarPorPlataforma {
+    background-color: rgb(216, 216, 149);
+    padding: 5px;
+    border-radius: 25px;
+    color: #333435;
+    text-align: center;
+    border: none;
+    margin-bottom: 5px;
+}
+  
+#body #filtros .ul .li2 .filtrarPorPlataforma:hover {
+    color: #e95f03;
+    background-color: #293241;
+}
+  
+#body #filtros .ul #proxJuegos {
+    background-color: #e95f03;
+    padding: 5px;
+    border-radius: 25px;
+    color: #3D5A80;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+  
+#body #filtros .ul #proxJuegos:hover {
+    color: #EE6C4D;
+    background-color: #293241;
+}
+  
+#body #filtros .ul a {
+    list-style: none;
+    text-decoration: none;
+    color: #E0FBFC;
+}
+  
+#body #listaJuegos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    margin-top: -42px;
+    color: #E0FBFC;
+    margin-left: 5px;
+    font-family: 'Arima', cursive;
+}
+  
+#body #listaJuegos .img1 {
+    border-radius: 15px;
+}
+  
+#body #listaJuegos .videoJuego1, #body #listaJuegos #div {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: rgb(105, 104, 104);
+    width: 220px;
+    height: auto;
+    line-height: 18px;
+    padding: 10px;
+    border-radius: 10px;
+}
+  
+#body #listaJuegos .videoJuego1 .h3, #body #listaJuegos #div .h3 {
+    font-family: 'Gulzar', serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+  
+#body #listaJuegos .plataformas {
+    text-align: center;
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
+    
+}
+  
+#body #listaJuegos .plataformas .id {
+    display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    background-color: #e95f03;
+    border-radius: 10px;
+    padding: 5px;
+}
+  
+#body #filter {
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 15px;
+    color: #E0FBFC;
+    margin-top: -100px;
+    font-family: 'Arima', cursive;
+}
+  
+#body .videoJuego1, #body #div {
+    margin-top: 60px;
+    margin-left: 15px;
+    text-align: center;
+    color: #E0FBFC;
+    font-family: 'Arima', cursive;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color:rgb(105, 104, 104);
+    width: 250px;
+    height: auto;
+    line-height: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+}
+  
+#body .videoJuego1 .id, #body #div .id {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 25px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    background-color: #e95f03;
+    border-radius: 10px;
+    padding: 5px;
+    color: #E0FBFC;
+}
+  
+#body .videoJuego1 .idPP, #body #div .idPP {
+    display: flex;
+    margin-top: 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    background-color: #e95f03;
+    border-radius: 10px;
+    padding: 5px;
+    color: #E0FBFC;
+}
+  
+#body .videoJuego1 .img1, #body #div .img1 {
+    border-radius: 15px;
+}
+  
+#body .videoJuego1 .plataformas, #body #div .plataformas {
+    text-align: center;
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
+}
+  
+#body #proximosJuegos {
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 5px;
+    color: #E0FBFC;
+    margin-top: -20px;
+    font-family: 'Arima', cursive;
+    margin-left: 5px;
+}
+  
+  #body #ultimoJuego {
+    display: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #e95f03;
+    margin-top: 20px;
+}
+  
+  #body #ultimoJuego a {
+    text-decoration: none;
+    color: #293241;
+}

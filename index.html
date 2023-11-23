@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO JUEGOS</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+    <header id="header">
+        <h1 class="logo"><a href="./index.html">
+            <img src="./img/logo_todo_juego.png" alt="logo"></h1>
+        </a>
+            <img src="./img/nintendo.png" alt="nintendo">
+            <img src="./img/PC_Gamer.png" alt="PC">
+            <img src="./img/Playstation.png" alt="PlayStation">
+            <img src="./img/xbox.png" alt="Xbox">
+    </header>
+    
+    <div class="buscar">
+        <input type="button" value="Buscar Juego" id="buscarJuego">
+    </div>
+    <div id="filtros">
+        <ul class="ul">
+            <li class="li1">Categorías
+                <input type="button" value="Accion" class="filtrarPorCategoria" >
+                <input type="button" value="Aventura" class="filtrarPorCategoria">
+                <input type="button" value="Primera Persona" class="filtrarPorCategoria">
+                <input type="button" value="RPG" class="filtrarPorCategoria">
+            </li>
+            <li class="li2">Plataformas
+                <input type="button" value="PC" class="filtrarPorPlataforma" >
+                <input type="button" value="Nintendo" class="filtrarPorPlataforma">
+                <input type="button" value="PlayStation" class="filtrarPorPlataforma">
+                <input type="button" value="Xbox" class="filtrarPorPlataforma">
+            </li>
+            <li> <input type="button" value="Próximos Juegos" id="proxJuegos"></li>
+            <div id="ultimoJuego"></div>
+        </ul>
+        <div id="filter">
+            <div id="filtrado"></div>
+        </div>
+        <div id="proximosJuegos"></div>
+        <div id="listaJuegos"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
