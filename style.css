@@ -224,7 +224,7 @@
   
 #body #listaJuegos .plataformas .id {
     display: flex;
-    margin-left: 10px;
+    margin-left: 35px;
     margin-top: 10px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -273,7 +273,7 @@
 #body .videoJuego1 .id, #body #div .id {
     display: flex;
     margin-top: 10px;
-    margin-left: 25px;
+    margin-left: 55px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

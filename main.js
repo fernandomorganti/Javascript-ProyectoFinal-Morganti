@@ -1,5 +1,5 @@
 
-const listaJuegos = [ // arreglo con el nombre de listaJuegos que contiene objetos y sus propiedades.
+const listaJuegos = [
     {
       nombre: "The Secret of Monkey Island",
       categoria: "Aventura",
@@ -72,19 +72,19 @@ const listaJuegos = [ // arreglo con el nombre de listaJuegos que contiene objet
         imagen: "./img/juegos/BioShock.jpg",
         id: 8,
     },
-  ];
-  //Esta función se utiliza para eliminar todos los filtros que se encuentren en el sitio, podría usarse cuando un usuario hace clic en el botón "Restablecer filtros".
-  const EliminarFiltros = () =>{
-    const eliminarFiltrado = document.getElementById("filtrado")
-    const eliminarJuegos = document.getElementById("listaJuegos")
-    const eliminarUlti = document.getElementById("ultimoJuego")
-    const contenedorJuegos = document.getElementById("proximosJuegos")
-        eliminarFiltrado.innerHTML= " "
-        eliminarJuegos.innerHTML= " "
-        eliminarUlti.innerHTML = " "
-        contenedorJuegos.innerHTML = " "
+];
+
+    const EliminarFiltros = () =>{
+        const eliminarFiltrado = document.getElementById("filtrado")
+        const eliminarJuegos = document.getElementById("listaJuegos")
+        const eliminarUlti = document.getElementById("ultimoJuego")
+        const contenedorJuegos = document.getElementById("proximosJuegos")
+            eliminarFiltrado.innerHTML= " "
+            eliminarJuegos.innerHTML= " "
+            eliminarUlti.innerHTML = " "
+            contenedorJuegos.innerHTML = " "
     }
-    //funcion que selecciona aleatoriamente un videojuego de la lista y lo muestra en la página.
+  
     const clickBuscarJuego = () => {
         
         EliminarFiltros();
@@ -96,17 +96,15 @@ const listaJuegos = [ // arreglo con el nombre de listaJuegos que contiene objet
             <p>${videoJuegoRandom.descripcion}</p>
             <div class="plataformas">
             <img src="${videoJuegoRandom.imagenPlataforma}" width="100"/>
-            <input type="button" value="Click aquí para Descargar" id="${videoJuegoRandom.id}" class="id">
+            <input type="button" value="Descargar Juego" id="${videoJuegoRandom.id}" class="id">
             </div>`
             simularDescarga()
     }
-    //función para llamar cada vez que el usuario haga clic en el elemento buscarJuego.
-    //Este código sirve para seleccionar y mostrar aleatoriamente un videojuego en la página cada vez que el usuario hace clic en el botón.
+   
     const buscarJuego = document.getElementById("buscarJuego").addEventListener("click", () => {
         clickBuscarJuego()
 })
- // Esta función itera sobre la lista de Juegos donde están todos los videojuegos que deben cargarse.
- // Para cada juego cargado va a mostrar la imagen del juego, el nombre, la calificación, la imagen de la plataforma y un botón de "Descargar".
+
     const cargarJuegos= () => {
         const contenedorJuegos = document.getElementById("listaJuegos")
         
@@ -118,43 +116,40 @@ const listaJuegos = [ // arreglo con el nombre de listaJuegos que contiene objet
                 <p>${videoJuego.descripcion}</p>
                 <div class="plataformas">
                 <img src="${videoJuego.imagenPlataforma}" width="100"/>
-                <input type="button" value="Click aquí para Descargar" id="${videoJuego.id}" class="id">
+                <input type="button" value="Descargar Juego" id="${videoJuego.id}" class="id">
                 </div>`
                 }
                 simularDescarga()
         } 
-        // Cuando el usuario hace clic, se ejevuta esta función que permite almacenar el nombre del juego en el almacenamiento local (localStorage).
-        // Luego, el código verifica la plataforma del juego y redirige al usuario al sitio web correspondiente.
-        const simularDescarga = () => {
+ 
+    const simularDescarga = () => {
             listaJuegos.forEach((videoJuego) => {
                 document.getElementById(videoJuego.id).addEventListener("click", () => {
                     localStorage.setItem(" ",JSON.stringify(videoJuego.nombre))
                     Swal.fire({
-                        title: "Seguro que quiere descargar?",
+                        title: "¿Seguro que quiere descargar?",
                         showDenyButton: true,
                         showCancelButton: true,
-                        confirmButtonText: "guardar en disco",
-                        denyButtonText: `No guardar`
+                        confirmButtonText: "Guardar en disco",
+                        denyButtonText: "No guardar"
                       }).then((result) => {
-                        /* Read more about isConfirmed, isDenied below */
                         if (result.isConfirmed) {
                           Swal.fire("Descargado", "", "success");
                         } else if (result.isDenied) {
                           Swal.fire("Cancelado", "", "info");
                         }
-                      });
+                      })
                 })
             })
         }
-//función para eliminar todos los filtros de la página.
-//Luego, utiliza método fetch para llamar a otra lista de juegos desde el archivo local JSON.
+
 const cargarProximoJuego = () => {
     EliminarFiltros();
             
         fetch ("../juegos.json")
         .then ( (res) => res.json()) 
 
-        .then ((juegos) => {//Esta función se ejecuta si la promesa es resuelta.
+        .then ((juegos) => {
                 
         juegos.forEach((videoJuego) =>{
             const contenedorJuegos = document.getElementById("proximosJuegos")
@@ -165,13 +160,11 @@ const cargarProximoJuego = () => {
                 <p>${videoJuego.descripcion}</p>
                 <div class="plataformas">
                 <img src="${videoJuego.imagenPlataforma}" width="100"/>
-                <input type="button" value="Click para ver trailer" id="${videoJuego.id}" class="id"></div>`
+                <input type="button" value="Ver Trailer Juego" id="${videoJuego.id}" class="id"></div>`
                 })
             })
         }
 
-// Esta función filtra los juegos de la lista según la categoría seleccionada.
-// primero borra los elementos de la lista, Luego agrega los juegos que coinciden con la categoría seleccionada y lo muestra en la página.
 const cargarEventosFiltros = () => {
     EliminarFiltros();
     const inputsDeFiltros = document.getElementsByClassName("filtrarPorCategoria")
@@ -190,7 +183,7 @@ const cargarEventosFiltros = () => {
         })
     }
 }
-// esta funcion muestra el juego guardado en el localStorage y permite redireccionar al sitio de donde fue descargado, aclaro que el juego descargado es una simulacion
+
 const ultimoJuegoJugado = () => {
     
     const juegosJugados= document.getElementById("ultimoJuego")
@@ -198,7 +191,7 @@ const ultimoJuegoJugado = () => {
             <h2>${JSON.stringify(localStorage)}</h2><a href="https://store.steampowered.com/" target="_blank"><b><h2>OPINAR AQUI</h2></b></div>`
     }
     
-// acá cargo mediante uso de Eventos los juegos que estan filtrados por plataforma.
+
  const cargarEventosPlataformas = () => {
     EliminarFiltros();
        const inputsDePlataforma = document.getElementsByClassName("filtrarPorPlataforma")
@@ -216,8 +209,7 @@ const ultimoJuegoJugado = () => {
             })
         }
     }
-// esta funcion filtra los juegos según la plataforma seleccionada, primero borra los elementos filtrados y
-// luego itera sobre la lista de juegos y agrega los juegos que coinciden con la plataforma seleccionada
+
 const filtrarPorPlataforma = (plataforma) => {
     EliminarFiltros();
     const filtrado = document.getElementById("filtrado")
@@ -233,12 +225,12 @@ const filtrarPorPlataforma = (plataforma) => {
             <p>${videoJuego.descripcion}</p>
             <div class="plataformas">
             <img src="${videoJuego.imagenPlataforma}" width="100"/>
-            <input type="button" value="Click aquí para Descargar" id="${videoJuego.id}" class="id">
+            <input type="button" value="Descargar juego" id="${videoJuego.id}" class="id">
             </div>`
             }
             simularDescarga()
     } 
-// lo mismo que la funcion anterior de arriba pero en este caso filtra por categoria.
+
 const filtrarPorCategoria= (categoria) => {
     EliminarFiltros();
     const filtrado = document.getElementById("filtrado")
@@ -253,30 +245,17 @@ const filtrarPorCategoria= (categoria) => {
         <p>${videoJuego.descripcion}</p>
         <div class="plataformas">
         <img src="${videoJuego.imagenPlataforma}" width="100"/>
-        <input type="button" value="Click aquí para Descargar" id="${videoJuego.id}" class="id">
+        <input type="button" value="Descargar Juego" id="${videoJuego.id}" class="id">
         </div>`
         }
         simularDescarga()
 } 
-// aca se muestran los avances o novedades que aun no he podido realizarlo, pero será terminado para la entrega final.
+
 const novedadJuego = document.getElementById("proxJuegos").addEventListener("click", () => {
     cargarProximoJuego()
 })
-// acá llamo a todas las funciones a ejecutar.
+
 cargarEventosFiltros()
 cargarEventosPlataformas()
 ultimoJuegoJugado()
 cargarJuegos()
-
-// if (videoJuego.plataforma === "PC") {
-//     location.href = "https://store.steampowered.com/"
-//   }
-//   if (videoJuego.plataforma === "Nintendo") {
-//       location.href = "https://www.nintendo.com/"
-//   }
-//   if (videoJuego.plataforma === "PlayStation") {
-//       location.href = "https://store.sony.com.ar/playstation/"
-//   }
-//   if (videoJuego.plataforma === "Xbox") {
-//       location.href = "https://www.xbox.com/"
-//   }
