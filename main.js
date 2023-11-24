@@ -1,4 +1,3 @@
-
 const listaJuegos = [
     {
       nombre: "The Secret of Monkey Island",
@@ -72,19 +71,20 @@ const listaJuegos = [
         imagen: "./img/juegos/BioShock.jpg",
         id: 8,
     },
-];
+  ];
 
-    const EliminarFiltros = () =>{
-        const eliminarFiltrado = document.getElementById("filtrado")
-        const eliminarJuegos = document.getElementById("listaJuegos")
-        const eliminarUlti = document.getElementById("ultimoJuego")
-        const contenedorJuegos = document.getElementById("proximosJuegos")
-            eliminarFiltrado.innerHTML= " "
-            eliminarJuegos.innerHTML= " "
-            eliminarUlti.innerHTML = " "
-            contenedorJuegos.innerHTML = " "
+ 
+  const EliminarFiltros = () =>{
+    const eliminarFiltrado = document.getElementById("filtrado")
+    const eliminarJuegos = document.getElementById("listaJuegos")
+    const eliminarUlti = document.getElementById("ultimoJuego")
+    const contenedorJuegos = document.getElementById("proximosJuegos")
+        eliminarFiltrado.innerHTML= " "
+        eliminarJuegos.innerHTML= " "
+        eliminarUlti.innerHTML = " "
+        contenedorJuegos.innerHTML = " "
     }
-  
+ 
     const clickBuscarJuego = () => {
         
         EliminarFiltros();
@@ -96,11 +96,11 @@ const listaJuegos = [
             <p>${videoJuegoRandom.descripcion}</p>
             <div class="plataformas">
             <img src="${videoJuegoRandom.imagenPlataforma}" width="100"/>
-            <input type="button" value="Descargar Juego" id="${videoJuegoRandom.id}" class="id">
+            <input type="button" value="Descargar este Juego" id="${videoJuegoRandom.id}" id="descarga">
             </div>`
-            simularDescarga()
+            
     }
-   
+
     const buscarJuego = document.getElementById("buscarJuego").addEventListener("click", () => {
         clickBuscarJuego()
 })
@@ -116,32 +116,32 @@ const listaJuegos = [
                 <p>${videoJuego.descripcion}</p>
                 <div class="plataformas">
                 <img src="${videoJuego.imagenPlataforma}" width="100"/>
-                <input type="button" value="Descargar Juego" id="${videoJuego.id}" class="id">
+                <input type="button" value="Descargar este Juego" id="descarga-${videoJuego.id}">>
                 </div>`
                 }
-                simularDescarga()
         } 
- 
-    const simularDescarga = () => {
-            listaJuegos.forEach((videoJuego) => {
-                document.getElementById(videoJuego.id).addEventListener("click", () => {
-                    localStorage.setItem(" ",JSON.stringify(videoJuego.nombre))
-                    Swal.fire({
-                        title: "¿Seguro que quiere descargar?",
-                        showDenyButton: true,
-                        showCancelButton: true,
-                        confirmButtonText: "Guardar en disco",
-                        denyButtonText: "No guardar"
-                      }).then((result) => {
-                        if (result.isConfirmed) {
-                          Swal.fire("Descargado", "", "success");
-                        } else if (result.isDenied) {
-                          Swal.fire("Cancelado", "", "info");
-                        }
-                      })
-                })
-            })
-        }
+
+const simularDescarga = () => {
+    const botonesDescarga = document.querySelectorAll('[id^="descarga-"]');
+    botonesDescarga.forEach((boton) => {
+        boton.addEventListener("click", () => {
+            Swal.fire({
+                title: "Seguro que quiere descargar?",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "guardar en disco",
+                denyButtonText: `No guardar`
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire("Descargado", "", "success");
+                } else if (result.isDenied) {
+                  Swal.fire("Cancelado", "", "info");
+                }
+              });
+        })
+    })
+}
+
 
 const cargarProximoJuego = () => {
     EliminarFiltros();
@@ -159,10 +159,10 @@ const cargarProximoJuego = () => {
                 <b><h3 class="h3">${videoJuego.nombre}</h3></b>
                 <p>${videoJuego.descripcion}</p>
                 <div class="plataformas">
-                <img src="${videoJuego.imagenPlataforma}" width="100"/>
-                <input type="button" value="Ver Trailer Juego" id="${videoJuego.id}" class="id"></div>`
+                <img src="${videoJuego.imagenPlataforma}" width="100"/>`
                 })
             })
+            
         }
 
 const cargarEventosFiltros = () => {
@@ -225,7 +225,7 @@ const filtrarPorPlataforma = (plataforma) => {
             <p>${videoJuego.descripcion}</p>
             <div class="plataformas">
             <img src="${videoJuego.imagenPlataforma}" width="100"/>
-            <input type="button" value="Descargar juego" id="${videoJuego.id}" class="id">
+            <input type="button" value="Descargar este Juego" id="descarga-${videoJuego.id}"> >
             </div>`
             }
             simularDescarga()
@@ -245,7 +245,7 @@ const filtrarPorCategoria= (categoria) => {
         <p>${videoJuego.descripcion}</p>
         <div class="plataformas">
         <img src="${videoJuego.imagenPlataforma}" width="100"/>
-        <input type="button" value="Descargar Juego" id="${videoJuego.id}" class="id">
+        <input type="button" value="Descargar este Juego" id="descarga-${videoJuego.id}">>
         </div>`
         }
         simularDescarga()
@@ -259,3 +259,4 @@ cargarEventosFiltros()
 cargarEventosPlataformas()
 ultimoJuegoJugado()
 cargarJuegos()
+simularDescarga()
